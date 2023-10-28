@@ -2,13 +2,16 @@ const arr = [3,2,4];
 const target = 6;
 
 var twoSum = function(nums, target) {
-    for(i in nums){ 
-        for(j = 0 ;j< nums.length; j++){
-            if (j == i) continue;
-            if(nums[i] + nums[j] == target){
-                return [Number(i), j];
-            }
-        }
+    let numsmap = Object();
+
+    for(i in nums){
+        let current = nums[i]; 
+        let completion = target - current;
+        if(numsmap[completion] != undefined){ 
+            return [numsmap[completion], i]; 
+        }else{
+            numsmap[nums[i]] = i;
+        } 
     }
 };
 
