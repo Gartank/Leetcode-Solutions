@@ -14,7 +14,3 @@ var twoSum = function(nums, target) {
         } 
     }
 };
-
-const sum = twoSum(arr, target);
-
-console.log(sum);
