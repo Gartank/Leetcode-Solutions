@@ -5,12 +5,14 @@ var twoSum = function(nums, target) {
     let numsmap = Object();
 
     for(i in nums){
-        let current = nums[i]; 
-        let completion = target - current;
-        if(numsmap[completion] != undefined){ 
-            return [numsmap[completion], i]; 
+        if(numsmap[target - nums[i]] != undefined){ 
+            return [numsmap[target - nums[i]], i]; 
         }else{
             numsmap[nums[i]] = i;
         } 
     }
 };
+
+const sum = twoSum(arr, target);
+
+console.log(sum);
